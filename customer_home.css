@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* For side menu */
+
+#side_menu
+{
+  background: rgb(255, 255, 255);
+  box-shadow: 0 0 20px black;
+  padding: 10px 0px;
+}
+
+.brand-logo{
+  width: 200px;
+
+}
+
+.brand-logo img
+{
+  width: 80%;
+
+}
+
+.menu-items a
+{
+  display: block;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 8px 20px;
+  margin: 0px 12px;
+  color: black;
+  font-weight: 400;
+
+}
+
+.menu-items a:hover{
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+
+
+#food_container
+{
+  background: rgb(255, 255, 255);
+  overflow: scroll;
+  overflow-x: hidden;
+  box-sizing: content-box;
+}
+
+#header
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1px;
+  padding-left: 10px;
+  position: sticky;
+  top: 0;
+  background: rgb(255, 255, 255);
+  z-index: 1;
+  box-shadow: 0 0 2px black;
+  
+
+}
+
+::-webkit-scrollbar
+{
+  display:none;
+
+}
+
+
+.search-bar
+{
+  width: 400px;
+  height: 40px;
+  background: rgb(227, 225, 225);
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  border-color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  margin: 10px 20px;
+
+}
+
+.search-bar input
+{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline:none;
+  padding: 14px, 10px;
+  font-size: 15px;
+  color: rgb(80, 79, 79);
+  
+}
+
+::placeholder
+{
+  color: rgb(107, 105, 105);
+}
+
+.search-bar button img
+{
+  width: 50%;
+  height: 50%;
+}
+
+.search-bar button{
+  border: 0;
+  border-radius: 50%;
+  margin-right: -20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;  
+  background: transparent;
+
+}
+
+
+.util i
+{ 
+  font-size: 16px;
+  margin: 0 16px;
+  color: white;
+  background: black;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+
+}
+
+.util i:active
+{
+  color: rgb(58, 15, 15);
+  background: rgb(168, 168, 168);
+}
+
+
+/* shop by food */
+
+#shop-by-food, #shop-by-shop
+{
+  margin-top: 20px;
+
+}
+
+
+#category-name, .food-items
+{
+  margin: 10px;
+  font-size: 28px;
+  color:rgb(7, 56, 17);
+  font-weight: 600;
+}
+
+#item-card
+{
+  width: 170px;
+  height: 230px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 4px;
+  background: linear-gradient(45deg, rgb(0, 0, 0) 10%, rgb(154, 26, 26) 100%);
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+  justify-content: center;
+  box-shadow: 0 0 15px black;
+
+
+
+}
+
+#item-card img
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: auto;
+  display:block;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  transition: 0.5s LL ease-in-out;
+}
+
+#item-card:hover
+{
+  transform: scale(1.05);
+}
+
+#item-card img:hover
+{
+  transform: scale(1.05);
+}
+
+#item-card #card-top
+{
+  padding-left: 5px;
+  padding-top: 5px;
+
+}
+
+.fa-heart-o
+{
+  padding: 6px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+  border-color: black; 
+
+}
+
+.toggle-heart
+{
+  background: pink;
+  color: white;
+}
+
+#item-name{
+  display: flex;
+  color:white;
+  margin: 2px 0;
+  font-weight: 600;
+  font-size: 12px;
+  justify-content: center;
+
+}
+
+#item-price
+{
+  display: flex;
+  margin: 1px 0;
+  color:white;
+  font-weight: 400;
+  font-size: 13px;
+  justify-content: center;
+
+}
+
+#shop-name
+{
+  display: flex;
+  margin: 1px 0;
+  color:white;
+  font-weight: 00;
+  font-size: 8px;
+  justify-content: center;
+
+}
+
+.see-more-foods {
+  /* Add padding to the container div */
+  padding: 10px;
+  /* Add margin to create space around the container div */
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#see-more{
+
+  color: white;
+  background: black;
+  border-radius: 20px;
+  height: 55px;
+  width: 20%;
+  font-size: 1.25rem;
+  font-weight: 400;
+  cursor: pointer;
+  border: none;
+  display: block;
+  box-shadow: 0 0 15px rgb(1, 1, 1);
+  
+
+}
+
+
+#shop-item-card
+{
+  width: 170px;
+  height: 220px;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 4px;
+  background: linear-gradient(45deg, rgb(0, 0, 0) 10%, rgb(154, 26, 26) 100%);
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
+  justify-content: center;
+  box-shadow: 0 0 15px black;
+
+}
+
+#shop-item-card img
+{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: auto;
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  transition: 0.5s LL ease-in-out;
+}
+
+#shop-name-2{
+  display: flex;
+  color:white;
+  margin: 2px 0;
+  font-weight: 600;
+  font-size: 15px;
+  justify-content: center;
+
+}
+
+#shop-item-card:hover
+{
+  transform: scale(1.05);
+}
+
+#shop-item-card img:hover
+{
+  transform: scale(1.05);
+}

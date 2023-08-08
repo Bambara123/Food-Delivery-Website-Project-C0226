@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: rgb(109, 105, 105);
+  
+}
+
+header{
+    margin: 3rem 15rem;
+    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1.5rem;
+    /* box-shadow: 0 0 4px black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-radius: 10px;
+    background: white;
+
+}
+
+#order-id
+{   
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+#status
+{
+  font-size: 1rem;
+  color: rgb(158, 5, 5);
+  padding-left: 1rem;
+
+}
+
+.order-details
+{
+  margin: 3rem 15rem;
+  background: white;  
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  box-shadow: 0 0 4px black;
+}
+
+
+.status-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-div span
+{
+  color:brown;
+  font-size: 1.5rem;
+}
+
+.status-div span, .status-div p
+{
+  
+  display: inline-block;
+  align-items: center;
+}
+
+.order-details-table tr td:last-child
+{
+  padding-left: 40px;
+}
+
+
+
+.cards-confirmations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* check boxes */
+section
+{
+    width: 100vmin;
+    height: 100vh;
+    position:absolute;
+}
+
+.tile
+{
+    border: 1px solid rgb(255, 255, 255);
+    height: 200px;
+    width: 170px;
+    position: relative;
+}
+
+input[type = "checkbox"]
+{
+    -webkit-appearance: none;
+    position:relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    
+}
+
+input[type = "checkbox"]::after
+{
+    position:absolute;
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    font-size: "22px";
+    top: 10px;
+    left: 10px;
+    color: aliceblue;
+
+}
+
+input[type = "checkbox"]:hover
+{
+    transform: scale(1.05);
+}
+
+.label1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 80%;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+
+}
+
+.label1 .fas
+{
+    font-size: 60px;
+    color: brown;
+}
+
+input[type = "checkbox"]:checked + .label1 .fas
+{
+    animation: grow 0.5s;
+}
+
+@keyframes grow{
+
+    50%{
+        font-size: 80px;
+    }
+}
+
+.label1 h6
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+input[type = "checkbox"]:checked
+{
+    border: 3px solid brown;
+}
+
+input[type = "checkbox"]:checked::after
+{
+    font-weight: 900;
+    content: "\f058";
+    color:brown ;
+}

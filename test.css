@@ -1,0 +1,105 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section
+{
+    width: 100vmin;
+    height: 100vh;
+    position:absolute;
+}
+
+.tile
+{
+    border: 1px solid rgb(255, 255, 255);
+    height: 200px;
+    width: 170px;
+    position: relative;
+}
+
+input[type = "checkbox"]
+{
+    -webkit-appearance: none;
+    position:relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    
+}
+
+input[type = "checkbox"]::after
+{
+    position:absolute;
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    font-size: "22px";
+    top: 10px;
+    left: 10px;
+    color: aliceblue;
+
+}
+
+input[type = "checkbox"]:hover
+{
+    transform: scale(1.05);
+}
+
+.label1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 80%;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+
+}
+
+.label1 .fas
+{
+    font-size: 60px;
+    color: brown;
+}
+
+input[type = "checkbox"]:checked + .label1 .fas
+{
+    animation: grow 0.5s;
+}
+
+@keyframes grow{
+
+    50%{
+        font-size: 80px;
+    }
+}
+
+.label1 h6
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+input[type = "checkbox"]:checked
+{
+    border: 3px solid brown;
+}
+
+input[type = "checkbox"]:checked::after
+{
+    font-weight: 900;
+    content: "\f058";
+    color:brown ;
+}

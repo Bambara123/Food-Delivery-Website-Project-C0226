@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+*
+{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+
+
+.brand-logo
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.brand-logo img
+{
+  height: 30%;
+  width: 30%;
+}
+
+.background-container {
+  position: absolute;
+  min-height: 200vh;
+  width: 100%;
+  background: url('customer_reg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+}
+
+
+.container
+{
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px black;
+
+}
+
+.container h1
+{
+  color : black;
+  margin-top: 20px;
+  font-weight: 1000;
+  font-size: 2.5em;   
+  text-align: center;
+  margin-bottom: 1px;
+  
+}
+
+.container .form
+{
+  margin-top: 15px;
+  align-items: center;
+
+}
+
+.form .input-box
+{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form .input-box label
+{
+  color: black;
+  margin-left: 5px;
+
+}
+
+.form .input-box input
+{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgb(104, 100, 100);
+  border-radius: 6px;
+  padding: 0 15px;
+
+
+}
+
+.form .column{
+  display: flex;
+  column-gap: 5px;
+
+}
+
+.form button
+{
+  height: 55px;
+  width: 50%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: black;
+  display: block;
+  margin: 50px auto;
+
+}
+
+.form button :hover
+{
+  background: rgb(61, 60, 60);
+}
+
+
+
