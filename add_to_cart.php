@@ -3,17 +3,14 @@
     // get the session variables.
     session_start();
 
-    $user_name = $_SESSION['user_name'];
-    $food_id = $_SESSION['food_id'];
-    $added_quantity = $_POST['count']; 
-
-    echo $user_name. "<br>";
-    echo $food_id;
+    $username = $_SESSION['username'];
+    $food_id = $_POST['food_id'];
+    $added_quantity = $_POST['quantity']; 
 
     // database connection
     include('database.php');
 
-    $sql_0 = "SELECT quantity FROM food_items_in_carts WHERE user_name = '$user_name' AND food_id = '$food_id'";
+    $sql_0 = "SELECT quantity FROM food_items_in_carts WHERE user_name = '$username' AND food_id = '$food_id'";
 
     $result = mysqli_query($conn, $sql_0);
 
@@ -27,7 +24,7 @@
             $quantity = (int)$row[0]; // or (float)$row[0];
             $quantity = $quantity + $added_quantity;
 
-            $sql_update = "UPDATE food_items_in_carts SET quantity = $quantity WHERE user_name = '$user_name' AND food_id = '$food_id'";
+            $sql_update = "UPDATE food_items_in_carts SET quantity = $quantity WHERE user_name = '$username' AND food_id = '$food_id'";
 
             mysqli_query($conn, $sql_update);
 
@@ -37,7 +34,7 @@
             // No matching row found
             $quantity = $added_quantity;
             $sql_add = "INSERT INTO food_items_in_carts(user_name, food_id, quantity) 
-            VALUES ('$user_name', '$food_id', '$quantity')";
+            VALUES ('$username', '$food_id', '$quantity')";
         
             mysqli_query($conn, $sql_add);
 
@@ -48,8 +45,5 @@
     echo "Error: " . mysqli_error($connection);
 
     }
-
-    header("Location: one_product_show.php");
-
 
 ?>

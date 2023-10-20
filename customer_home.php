@@ -28,7 +28,7 @@
 <div class="util">
   
   <i class="fa fa-tags"> Offers</i>
-  <i class="fa fa-cart-plus" id="cart-plus"> 0 Items</i>
+  <a href = "http://localhost/project/mycart.php"><i class="fa fa-cart-plus" id="cart-plus"> My Cart</i></a>
 </div>
 </div>
 
@@ -39,14 +39,19 @@
     <div id="side_menu">
       
       <div class="menu-items">
-        <a href="#">My orders</a>
-        <a href="#">My address</a>
-        <a href="#">Settings</a>
-        <a href="#">Help</a>
-        <a href="#">Add your shop</a>
-        <a href="#">Earn Cash</a>
-        <a href="#">Refer a friend</a>
-      </div>      
+          <a href="http://localhost/project/customer_home.php#">Home</a>
+          <a href="http://localhost/project/my_orders.php">My orders</a>
+          <a href="#">My address</a>
+          <a href="#">Settings</a>
+          <a href="#">Help</a>
+          <a href="http://localhost/project/shop_reg.html">Add your shop</a>
+          <a href="http://localhost/project/deliver_reg.html">Enroll Courier</a>
+          <?php
+          session_start();
+          if (isset($_SESSION['username'])) {
+    echo '<a href="http://localhost/project/logout.php">Log out</a>';
+} ?>
+        </div>    
     </div>
 
     <div id="food_container">
@@ -56,68 +61,63 @@
 
         <div id="shop-by-food">
           <p id="category-name">Shop by Food</p>
-
-          <div id="item-card">
-            <div id="card-top">
-              <i class="fa fa-heart-o add-to-cart"></i>
-            </div>
-            <img src="http://localhost/project/images/1.jpg" alt="">
-            <p id="item-name">Chicken Curry</p>
-            <p id="shop-name">from Hot and chill</p>
-            <p id="item-price">Price: $ 10</p>
-          </div>
-          <div id="item-card">
-            <div id="card-top">
-              <i class="fa fa-heart-o add-to-cart"></i>
-            </div>
-            <img src="http://localhost/project/images/1.jpg" alt="">
-            <p id="item-name">Chicken Curry</p>
-            <p id="shop-name">from Hot and chill</p>
-            <p id="item-price">Price: $ 10</p>
-          </div>
-          <div id="item-card">
-            <div id="card-top">
-              <i class="fa fa-heart-o add-to-cart"></i>
-            </div>
-            <img src="http://localhost/project/images/1.jpg" alt="">
-            <p id="item-name">Chicken Curry</p>
-            <p id="shop-name">from Hot and chill</p>
-            <p id="item-price">Price: $ 10</p>
-          </div>
           
           <?php
-            session_start();
+
+            if (isset($_SESSION['username'])) {
+              $username = $_SESSION['username'];
+
+            }
+
             include("database.php");
 
-            $sql = "SELECT * FROM menu";
+            $sql = "SELECT * FROM menu WHERE available = 1 ORDER BY RAND()";
             $result = $conn->query($sql);
 
+            $count = 0;
+
             if ($result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                $shop_name = $row['shop_name'];
+              while (($row = $result->fetch_assoc()) && $count < 30) {
+                $username_s = $row['username_s'];
                 $imageName = $row['image'];
                 $name = $row['food'];
                 $price = $row['price'];
-                $imagePath = 'upload/' . $imageName;
+                $imagePath = $imageName;
                 $food_id = $row['food_id'];
 
-                echo '<a href="http://localhost/project/one_product_show.php">
-                  <div id="item-card">
+                $sql_to_get_shop_name = "SELECT shopname FROM shop_details WHERE username_s = '$username_s'";
+                $result_shop_name_sql = mysqli_query($conn, $sql_to_get_shop_name);
+
+                $shop_name = get_single_value_from_a_table($result_shop_name_sql, 'shopname');
+
+                echo '<div id="item-card" onclick="redirectToProductPage('.$food_id.')">
                     <div id="card-top">
                       <i class="fa fa-heart-o add-to-cart"></i>
                     </div>
                     <img src="' . $imagePath . '" alt="">
                     <p id="item-name">' . $name . '</p>
                     <p id="shop-name">by ' . $shop_name . '</p>
-                    <p id="item-price">$' . $price . '</p>
-                  </div>
-                </a>';
+                    <p id="item-price">LKR ' . $price . '</p>
+                  </div>';
+                  $count++;
+
               }
             } else {
               echo 'No products found.';
             }
 
             $conn->close();
+
+            function get_single_value_from_a_table($result, $column_to_get) {
+              $row = mysqli_fetch_assoc($result);
+  
+              if ($row) {
+                  return $row[$column_to_get];
+              } else {
+                  return null;
+              }
+            }
+
             ?>
 
      
@@ -136,39 +136,37 @@
 
         <div id="shop-by-shop">
 
-          <p id="category-name">Shop By Restaurant</p>
-          <div id="shop-item-card">
-            <img src="http://localhost/project/images/1.jpg" alt="">
-            <p id="shop-name-2">Hot and CHill</p>
-            <p id="shop-name">Kandy</p>
-          </div> 
+          <p id="category-name">Shop By Restaurant</p> 
 
           <?php
 
           include("database.php");
 
           // Fetch products from the database
-          $sql = "SELECT * FROM shop_details";
+          $sql = "SELECT * FROM shop_details ORDER BY RAND()";
           $result = $conn->query($sql);
 
           // Display products
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-              $shop_id = $row['ID'];
+              $username_s = $row['username_s'];
               $shop_name = $row['shopname'];
-              $city = $row['city'];    
-              $imagePath = 'upload/' . $imageName;
+              $city = $row['city'];  
+              $imageName = $row['default_image_for_shop'];
+              
+              if(empty($imageName)){
+                $imagePath = "shop_pp/default.png";
 
-              echo '
-                <a href =  "http://localhost/project/one_product_show.php" >
-                  <div id="shop-item-card">
-                    <img src="http://localhost/project/images/1.jpg" alt="">
-                    <p id="shop-name-2">'.$shop_name.'</p>
-                    <p id="shop-name">'.$city.'</p>
-                  </div> 
-                </a>
+              }else{
+                $imagePath = 'shop_pp/' . $imageName;
+              }
+              
 
-              ';
+              echo '<div id="shop-item-card" onclick="redirectToShopPage(\''.htmlspecialchars($username_s, ENT_QUOTES, 'UTF-8').'\')">
+                      <img src="'.$imagePath.'" alt="">
+                      <p id="shop-name-2">'.$shop_name.'</p>
+                      <p id="shop-name">'.$city.'</p>
+                  </div>';
             }
           } else {
             echo 'No products found.';
@@ -177,14 +175,28 @@
           $conn->close();
           ?>
           
-          
-          <div class = "see-more-foods"><input type = "button" id = "see-more" value = "Still hungry?"/></div>
         </div>
 
       </div>
     </div>
 
   </div>
+ 
+  <script>
+    function redirectToProductPage(food_id) {
+        // Redirect to the next page with the specific order_id parameter
+        window.location.href = "http://localhost/project/one_product_show.php?food_id=" + food_id;
+    }
+</script>
+
+<script>
+    function redirectToShopPage(username_s) {
+        // Redirect to the next page with the specific username_s parameter
+        window.location.href = "http://localhost/project/shop_by_shop.php?username_s=" + username_s;
+    }
+</script>
+
+
 </body>
 </html>
 

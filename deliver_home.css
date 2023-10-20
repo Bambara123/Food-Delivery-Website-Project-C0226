@@ -74,9 +74,10 @@ a
 
 }
 
-#profile{
+#add-new, #update_stocks, #settings{
     display:none;
 }
+
 
 .sidebar-menu a
 {
@@ -233,9 +234,9 @@ header label span
 
 main
 {   
-    margin-top: 85px;
+    margin-top: 60px;
     padding: 1rem 1.5rem;
-    background: rgb(255, 244, 244);
+    background: rgb(255, 255, 255);
     min-height: calc(100vh - 90px);
 }
 
@@ -254,7 +255,7 @@ main
 {   
     display: flex;
     justify-content: space-between;
-    background: #fff;
+    background: hsl(0, 85%, 87%);
     padding: 2rem;
     border-radius: 5px;   
     
@@ -289,7 +290,14 @@ table
 
 .recent-grid
 {
-    margin-top: 3.5rem;
+    margin-top: 0rem;
+    display: grid;
+    /* grid-template-columns: 70% auto; */
+}
+
+.recent-grid2
+{
+    margin-top: -1rem;
     display: grid;
     /* grid-template-columns: 70% auto; */
 }
@@ -464,5 +472,327 @@ td
 
     }
 }
+
+/* add food */
+
+.form-input
+{
+    width: 300px;
+    padding: 20px;
+    margin-top: 20px;
+    background: white;
+
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  
+}
+
+.form-input img
+{
+    width: 100%;
+    margin-bottom: 30px;
+    display: none;
+}
+
+.form-input label
+{
+    display: block;
+    width: 55%;
+    height: 45px;
+    padding: 3px;
+    text-align: center;
+    background: var(--main-color);
+    color: aliceblue;
+    line-height: 45px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form-input input
+{
+    display: none;
+}
+
+
+/* FORM DATA */ 
+
+
+#add-new main .add-food
+{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#add-new main .add-food h1
+{
+color : black;
+margin-top: 0px;
+font-weight: 1000;
+font-size: 1.7em;   
+text-align: center;
+margin-bottom: 1px;
+
+}
+
+#add-new main .add-food .form1
+{
+margin-top: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.form1 .input-box
+{
+width: 100%;
+margin-top: 20px;
+}
+
+.form1 .input-box label
+{
+color: rgb(0, 0, 0);
+margin-left: 5px;
+
+}
+
+.form1 .input-box input
+{
+position: relative;
+height: 50px;
+width: 100%;
+font-size: 1rem;
+outline: none;
+border: 1px solid rgb(104, 100, 100);
+border-radius: 6px;
+padding: 0 15px;
+
+
+}
+
+.form1 .column{
+display: flex;
+column-gap: 5px;
+
+}
+
+.form1 button
+{
+height: 55px;
+width: 25%;
+color: #fff;
+font-size: 1rem;
+font-weight: 400;
+cursor: pointer;
+border: none;
+border-radius: 10px;
+background-color: rgb(0, 0, 0);
+display: block;
+margin: 50px auto;
+margin-top: 20px;
+
+}
+
+
+#add-new main .form1 button :hover
+{
+    background: rgb(222, 215, 215);
+}
+
+/* Toggle */
+
+.toggle
+{ 
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.toggle-label 
+{
+    height: 26px;
+    width: 52px;
+    background:rgb(214, 139, 139);
+    border-radius: 13px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s;
+    
+}
+
+.toggle-label::before
+{
+    position: absolute;
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 2px;
+    transition: 0.5s;
+
+}
+
+.check:checked + .toggle-label
+{
+    background: #a60000;
+}
+
+.check:checked + .toggle-label::before
+{
+    transform: translateX(26px);
+    
+}
+
+.check
+{
+    display: none;
+}
+
+/* settings part */
+
+.container
+{
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 80px 80px 25px 80px;
+  border-radius: 8px;
+
+}
+
+.container h1
+{
+  color : black;
+  margin-top: 20px;
+  font-weight: 1000;
+  font-size: 1.7em;   
+  text-align: center;
+  margin-bottom: 1px;
+  
+}
+
+.container .myForm
+{
+  margin-top: 15px;
+  align-items: center;
+
+}
+
+.myForm .input-box
+{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.myForm .input-box label
+{
+  color: black;
+  margin-left: 5px;
+
+}
+
+.myForm .input-box input
+{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  border: 1px solid rgb(104, 100, 100);
+  border-radius: 6px;
+  padding: 0 15px;
+
+
+}
+
+.myForm .column{
+  display: flex;
+  column-gap: 5px;
+
+}
+
+.myForm button 
+{
+  height: 40px;
+  width: 25%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: black;
+  display: block;
+  margin: 30px auto;
+
+}
+
+.myForm button :hover
+{
+  background: rgb(129, 127, 127);
+}
+
+
+.myForm .delete-account
+{
+    background: #ff0000;
+}
+
+.myForm2 .form-input
+{
+    width: 100%;
+}
+
+.myForm2 .form-input label
+{
+    width: 25%;
+    height: 40px;
+    padding-top: -1px;
+    border-radius: 6px;
+}
+
+
+#registration-form2  button
+{
+height: 40px;
+width: 25%;
+color: #fff;
+font-size: 1rem;
+font-weight: 400;
+cursor: pointer;
+border: none;
+border-radius: 6px;
+background-color: rgb(0, 0, 0);
+display: block;
+margin: 50px auto;
+margin-top: 20px;
+
+}
+
+#settings  .container .delete-account
+{
+    height: 40px;
+    width: 25%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(255, 0, 0);
+    display: block;
+    margin: 30px auto;
+}
+
+
+
 
 

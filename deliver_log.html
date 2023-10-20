@@ -10,7 +10,7 @@
 <body>
   <section>
   <div class = "image_box">
-    <img src = "/images/deliver_log.jpg">
+    <img src = "http://localhost/project/images/deliver_log.jpg">
     <div class = "text">
       <span class = "text-1">Miles today, smiles tomorrow</span>
       <span class = "text-2">Orders awaits, login now</span>
@@ -22,15 +22,15 @@
     <div class = "form_box">
 
       <h2>Login</h2>
-      <form>      
+      <form action = "deliver_log.php" method = "post">      
           
         <div class = "input_box">
           <span>Username</span>
-          <input type = "text" name = "">
+          <input type = "text" name = "username_d">
         </div>
         <div class = "input_box">
           <span>Password</span>
-          <input type = "password" name = "">
+          <input type = "password" name = "password">
         </div>
         <div class = "remember">      
           <label><input type = "checkbox" name= "">Remember password</label>
@@ -39,7 +39,7 @@
           <input type = "submit" value = "login" name = "">        
         </div>
         <div class = "signup">
-          <p>Don't have an account? <a href = "deliver_reg.php">Sign up</a></p>
+          <p>Don't have an account? <a href = "deliver_reg.html">Sign up</a></p>
         </div>
       </form>
   

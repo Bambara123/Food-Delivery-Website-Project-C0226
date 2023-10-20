@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track My Order - Food Delivery App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    .track-order-section {
+      text-align: center;
+    }
+    .track-order-section h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .track-order-form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      font-size: 18px;
+      color: #333;
+      display: block;
+    }
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-button {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .form-button:hover {
+      background-color: #555;
+    }
+    .order-status-result {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="track-order-section">
+      <h1>Track My Order</h1>
+      <form class="track-order-form">
+        <div class="form-group">
+          <label class="form-label" for="order-number">Order Number:</label>
+          <input class="form-input" type="text" id="order-number" placeholder="Enter your order number">
+        </div>
+        <button class="form-button" type="button" onclick="trackOrder()">Track Order</button>
+      </form>
+      <div class="order-status-result" id="status-result"></div>
+    </div>
+  </div>
+
+  <script>
+    function trackOrder() {
+      const orderNumber = document.getElementById('order-number').value;
+      const statusResult = document.getElementById('status-result');
+
+      // Here you would implement your logic to fetch and display the real-time order tracking status
+      // For demonstration purposes, let's assume a simple message is returned based on the order number
+      if (orderNumber === '12345') {
+        statusResult.textContent = 'Your order is on the way and will be delivered shortly.';
+      } else if (orderNumber === '67890') {
+        statusResult.textContent = 'Your order has been delivered. Enjoy your meal!';
+      } else {
+        statusResult.textContent = 'Order not found. Please check your order number.';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Options - Food Delivery App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    .payment-options-section {
+      text-align: center;
+    }
+    .payment-options-section h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .payment-options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .payment-option {
+      flex: 0 0 calc(33.33% - 20px);
+      margin: 10px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .payment-option:hover {
+      transform: translateY(-5px);
+    }
+    .payment-icon {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .payment-title {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .payment-description {
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="payment-options-section">
+      <h1>Payment Options</h1>
+      <div class="payment-options">
+        <div class="payment-option">
+          <div class="payment-icon">💳</div>
+          <div class="payment-title">Credit Card</div>
+          <div class="payment-description">Securely pay for your orders using major credit cards.</div>
+        </div>
+        <div class="payment-option">
+          <div class="payment-icon">📱</div>
+          <div class="payment-title">Mobile Wallet</div>
+          <div class="payment-description">Use popular mobile wallet apps for quick and convenient payments.</div>
+        </div>
+        <div class="payment-option">
+          <div class="payment-icon">📦</div>
+          <div class="payment-title">Cash on Delivery</div>
+          <div class="payment-description">Pay in cash when your order is delivered to your doorstep.</div>
+        </div>
+        <div class="payment-option">
+          <div class="payment-icon">🅿️</div>
+          <div class="payment-title">PayPal</div>
+          <div class="payment-description">Make secure online payments using your PayPal account.</div>
+        </div>
+        <div class="payment-option">
+          <div class="payment-icon">💰</div>
+          <div class="payment-title">Apple Pay</div>
+          <div class="payment-description">Seamlessly pay with your Apple Pay-enabled device.</div>
+        </div>
+        <div class="payment-option">
+          <div class="payment-icon">🏦</div>
+          <div class="payment-title">Bank Transfer</div>
+          <div class="payment-description">Transfer funds directly from your bank account.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

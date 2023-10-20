@@ -103,9 +103,15 @@ body {
   cursor: pointer;
   border: none;
   display: block;
+  transition: 0.1s;
   /* box-shadow: 0 0 10px rgb(1, 1, 1);
    */
 
+}
+
+
+#see-more:active {
+  background: rgb(168, 168, 168);
 }
 
 

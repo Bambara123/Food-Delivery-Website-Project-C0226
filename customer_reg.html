@@ -13,54 +13,108 @@
   
   <section class = "container">
 
-    <h1>Sign up</h1>
+    <div class = "brand-logo">
+      <img src = "images/logo.png" alt = "">
 
-    <form id="registration-form" action = "http://localhost/project/customer_home.php" class = "form" method = "POST">
+    </div>
+
+    <h1>Sign up to savor with joy</h1>
+
+    <form id="registration-form" action = "http://localhost/project/customer_reg.php" class = "form" method = "POST">
  
       <div class = "column">
         <div class = "input-box">
           <label>First name</label>
-          <input type = "text" placeholder="Enter last name"/>
+          <input type = "text" placeholder="Enter last name" name = "f_name" required/>
         </div>
         <div class = "input-box">
           <label>Last name</label>
-          <input type = "text" placeholder="Enter last name"/>
+          <input type = "text" placeholder="Enter last name" name = "l_name" required />
         </div>
 
-      </div>
+      </div>      
 
       <div class = "input-box">
         <label>Email</label>
-        <input type = "text" placeholder="Enter the email"/>
+        <input type = "text" placeholder="Enter the email" name = "email" required/>
       </div>
 
       <div class = "input-box">
         <label>Address</label>
-        <input type = "text" placeholder="Home number or Street name"/>
+        <input type = "text" placeholder="Home number or Street name" name = "address_line1" required/>
       </div>
       <div class = "input-box">
-        <input type = "text" placeholder="Enter the address line 2"/>
+        <input type = "text" placeholder="Enter the address line 2" name = "address_line2"/>
       </div>
 
       <div class = "input-box">
-        <input type = "text" placeholder="City"/>
+        <input type = "text" placeholder="City" name = "city" required/>
       </div>
 
       <div class = "input-box">
         <label>Phone number</label>
-        <input type = "text" placeholder="Enter the phone number"/>
+        <input type = "text" placeholder="Enter the phone number" name = "p_number" required/>
+      </div>
+
+      <div class = "input-box">
+        <label>User name</label>
+        <input type = "text" placeholder="Enter a FOODYPY username you prefer" name = "username"  id = "username" required/>
       </div>
 
       <div class = "input-box">
         <label>Password</label>
-        <input type = "password" placeholder="Enter a password"/>
+        <input type = "password" placeholder="Enter a password" name = "password" required/>
       </div>
 
-      <button>Sign up</button>      
+      <button type = "submit">Sign up</button>      
 
     </form>
 
   </section>
+
+
+  <script>
+
+    // display the message when user enters existing username
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = event.target;
+        const formData = new FormData(form);
+
+        // Use AJAX to submit the form data
+        fetch(form.action, {
+            method: form.method,
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            if (data.usernameNotAvailable) {
+
+                document.getElementById('username').value = 'Another Foodipier has taken this user name try different!';
+                document.getElementById('username').classList.add('error-message');
+            } else {
+                // Redirect after a short delay
+                setTimeout(function() {
+                    window.location.href = 'customer_home.php';
+                }, 500); // Redirect after 1/2 seconds
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+
+    //  make it black again
+    document.getElementById('username').addEventListener('input', function() {
+        this.classList.remove('error-message');
+    });
+</script>
+  
   
 </body>
 </html>
+
+

@@ -51,12 +51,15 @@ function processLogin($username, $password, $conn) {
 
 // Check if the login form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST["username_d"];
+    $username_d = $_POST["username_d"];
     $password = $_POST["password"];
 
     // Process the login
-    if(processLogin($username, $password, $conn)){
-        header("Location: deliver_home.html");
+    if(processLogin($username_d, $password, $conn)){
+
+        session_start();
+        $_SESSION['username_d'] = $username_d;
+        header("Location: deliver_home.php");
         
     }
 }

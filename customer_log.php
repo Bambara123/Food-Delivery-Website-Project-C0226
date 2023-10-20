@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include('database.php');
 
 // Function to validate and process the login
@@ -46,11 +44,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     
-    // to pass for next page
-    $_SESSION["user_name"] = $username;
-
     // Process the login
     if(processLogin($username, $password, $conn)){
+        session_start();
+        $_SESSION["username"] = $username;
         header("Location: customer_home.php");
         
     }

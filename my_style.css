@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    font-size: 50px;
+    color: black;
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #89391e;
+    font-weight: lighter;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+p{
+    text-align: center;
+    line-height: 25px;
+    
+    color: rgb(22, 21, 21);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 500;
+    padding-bottom: 20px;
+
+}
+.heading {
+    position: relative;
+    color: #fff;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.heading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("images.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+    
+}
+
+.logo img{
+    max-width: 100px; 
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    align-items:start;
+}
+
+.socials{
+    text-align: center;
+}
+.fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    align-items: center;
+  }
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    
+    color: #89391e;
+  }
+  
+  .fa-twitter {
+    
+    color:#89391e;
+  }
+  .fa-linkedin {
+    
+    color:#89391e;
+  }
+  .fa-instagram {
+    
+    color: #89391e;
+  }
+  .Info i{
+    
+  color: #89391e;
+  font-size: 25px;
+  width: 38px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+  }
+
+  .Info .mail .fa-envelop{
+    font-size: 17px;
+  line-height: 40px;
+  }
+
+ .Info p{
+    display: inline-block;
+    color: black;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+
+.split{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 20px; /* Gap between columns */
+}
+.links{
+    line-height: 40px;
+}
+h2{
+    font-weight:400;
+    padding: 20px;
+    
+}
+.deliver{
+    text-align: center;
+
+
+}
+.shop{
+    text-align: center;
+}

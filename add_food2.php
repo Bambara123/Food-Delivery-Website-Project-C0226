@@ -2,6 +2,8 @@
 
     session_start();
 
+    if(isset($_FILES["image"])){
+
     if(isset($_POST["submit"]) && isset($_POST["food_name"]) && isset($_POST["price"]) && isset($_FILES["image"])){
         
         // printing the image details.    
@@ -39,22 +41,24 @@
                     $img_upload_path = 'upload/'.$new_image_name;
                     move_uploaded_file($tmp_name, $img_upload_path);
 
+                    $img_url = 'http://localhost/project/upload/'.$new_image_name;
+
                     $food_name = $_POST['food_name'];
                     $price = $_POST["price"];
-                    $shop_name = $_SESSION["shopname"];
+                    $username_s = $_SESSION["username_s"];
                     
                     //Insert into database.
-                    $sql = "INSERT INTO menu(shop_name, food, price, image) 
-                            VALUES ( '$shop_name','$food_name' , '$price' ,'$new_image_name')";
+                    $sql = "INSERT INTO menu(username_s, food, price, image) 
+                            VALUES ( '$username_s','$food_name' , '$price' ,' $img_url')";
 
                     
                     mysqli_query($conn, $sql);
-                    header("Location: add_food2.html");                    
+                    header("Location: http://localhost/project/shop_home.php");                    
 
                 }else{
                     $em = "You cannot upload files of this type.";
                     
-                    header("Location: add_food2.php?error=$em");
+                    header("Location: http://localhost/project/shop_home.php?error=$em");
 
                 }
 
@@ -62,13 +66,18 @@
 
         }else{
             echo "Unknown error occured!";
-            header("Location: add_food2.html");   
+            header("Location: http://localhost/project/error_occured.html");   
 
         }
 
     }else{
-        header("Location: add_food2.html");
+
+        header("Location: error_occured.html");
 
     }
+}else{
+
+    header("Location: error_occured.html");
+}
 
 ?>

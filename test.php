@@ -1,8 +1,21 @@
 <?php
 
-    $param1 = $_GET['food_id'];
-    echo "<p>Received param1: " . htmlspecialchars($param1) . "</p>";
+    include("database.php");
 
-    echo "heklas";
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "UPDATE deliverymen_details SET ongoing_orders = all_orders - completed_orders";
+
+mysqli_query($conn, $sql);
+
+
+// Close connection
+$conn->close();
 
 ?>
+    
+    

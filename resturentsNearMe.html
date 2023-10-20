@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nearby Restaurants Map</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      font-size: 24px;
+    }
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+    .quote {
+      text-align: center;
+      margin: 20px 0;
+      font-style: italic;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    Discover Nearby Restaurants
+  </div>
+  <div class="quote">
+    "Good food is the foundation of genuine happiness." - Auguste Escoffier
+  </div>
+  <div id="map"></div>
+
+  <script>
+    // Initialize and load the Google Maps API
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 0, lng: 0 }, // Initial center
+        zoom: 15, // Zoom level
+      });
+
+      // Get user's current location
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          // Set map center to user's location
+          map.setCenter(userLocation);
+
+          // Add a marker for the user's location
+          new google.maps.Marker({
+            position: userLocation,
+            map: map,
+            title: 'Your Location',
+          });
+        });
+      }
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASC8zkqtbwKXfa7L4vPckFlEzrvF9XcDQ&callback=initMap" async defer></script>
+</body>
+</html>

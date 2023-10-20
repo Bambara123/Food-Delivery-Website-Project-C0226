@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 // Function to validate and process the login
 function processLogin($username, $password, $conn) {
     // Prepare and bind the SELECT statement
-    $stmt = $conn->prepare("SELECT * FROM shop_details WHERE shopname = ?");
+    $stmt = $conn->prepare("SELECT * FROM shop_details WHERE username_s = ?");
     $stmt->bind_param("s", $username);
 
     // Execute the statement
@@ -48,13 +48,13 @@ function processLogin($username, $password, $conn) {
 
 // Check if the login form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $username = $_POST["username"];
+    $username = $_POST["username_s"];
     $password = $_POST["password"];
 
     // Process the login
     if(processLogin($username, $password, $conn)){
-        $_SESSION["shopname"] = $_POST["username"];
-        header("Location: add_food2.html");
+        $_SESSION["username_s"] = $_POST["username_s"];
+        header("Location: shop_home.php");
         
     }
 }
