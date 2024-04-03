@@ -46,10 +46,16 @@ FoodyPy is an online food delivery platform where customers can order from a var
 
 ## Getting Started
 
-- Anybody can explore this project and get insight. It's easy.
+Anybody can explore this project and get insight. It's easy.
 
-  This is an `inline code` example.
+1. Clone the repository.
+```
+git clone https://github.com/Bambara123/Food-Delivery-Website-Project-C0226.git
+```
+2. Navigate to project folder.
+3. Open the index.html file with live server.
 
+Now you can navigate through any page of the website.
 
 ## Contributors
 
