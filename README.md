@@ -45,12 +45,17 @@ FoodyPy is an online food delivery platform where customers can order from a var
 
 Anybody can explore this project and get insight. It's easy.
 
-1. Clone the repository.
+1. Install XAMPP software.
+2. Clone the repository to the htdocs folder inside the XAMPP installation location.
 ```
 git clone https://github.com/Bambara123/Food-Delivery-Website-Project-C0226.git
 ```
 2. Navigate to project folder.
-3. Open the index.html file with live server.
+3. Start XAMPP server and go to `http://localhost/phpmyadmin/index.php`.
+4. Create databse called 'project'. (This is essential)
+5. Inside the project folder go to database folder. Locate the project.sql file.
+6. Import it into newly created MySQL database.
+7. Open the index.html file with live server.
 
 Now you can navigate through any page of the website.
 
