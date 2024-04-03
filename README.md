@@ -1,9 +1,7 @@
 <div align = "center">
   <image src="/image/2.png" alt ="">
 
-</div>
-      
-## 
+</div>      
 
 <h3 align="center">Online Food Delivery Website 🍔 | Shop Owner Dashboard 🛒 | Driver Dashboard 🚚</h3> 
 
