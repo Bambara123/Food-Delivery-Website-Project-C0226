@@ -46,6 +46,10 @@ FoodyPy is an online food delivery platform where customers can order from a var
 
 ## Getting Started
 
+- Anybody can explore this project and get insight. It's easy.
+
+  This is an `inline code` example.
+
 
 ## Contributors
 
