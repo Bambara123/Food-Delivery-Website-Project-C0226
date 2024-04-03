@@ -28,10 +28,9 @@
 ## Table of Content
 
 1. [Introduction](#introduction)
-2. [Overview](#overview)
-3. [Key Features](#key-features)
-4. [Getting Started](#getting-started)
-5. [Contributors](#contributors)
+2. [Key Features](#key-features)
+3. [Getting Started](#getting-started)
+4. [Contributors](#contributors)
 
 ## Introduction
 FoodyPy is an online food delivery platform where customers can order from a variety of registered restaurants. Restaurant owners and delivery personnel can easily register on the website to expand their business and serve more customers.
@@ -59,5 +58,6 @@ Now you can navigate through any page of the website.
 
 ## Contributors
 
-a
-sdsadsadasdsa
+- Mahesha Madhushanka ([@Madhushanka00](https://github.com/Madhushanka00)) 
+- Nipuni Sathya ([@nsathya](https://github.com/janesmith))
+
