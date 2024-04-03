@@ -10,7 +10,8 @@ if ($conn->connect_error) {
 }
 
 // Function to validate and process the login
-function processLogin($username, $password, $conn) {
+function processLogin($username, $password, $conn)
+{
     // Prepare and bind the SELECT statement
     $stmt = $conn->prepare("SELECT * FROM shop_details WHERE username_s = ?");
     $stmt->bind_param("s", $username);
@@ -32,8 +33,6 @@ function processLogin($username, $password, $conn) {
             echo "Login successful!";
             // Continue with further processing or redirect to a dashboard page
             return true;
-
-            
         } else {
             echo "Invalid password!";
         }
@@ -52,14 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST["password"];
 
     // Process the login
-    if(processLogin($username, $password, $conn)){
+    if (processLogin($username, $password, $conn)) {
         $_SESSION["username_s"] = $_POST["username_s"];
         header("Location: shop_home.php");
-        
     }
 }
 
 // Close the database connection
 $conn->close();
-?>
-

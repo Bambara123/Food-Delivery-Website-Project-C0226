@@ -1,4 +1,6 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -51,12 +53,11 @@ if ($stmt = $con->prepare('SELECT id FROM shop_details WHERE username_s = ?')) {
             if ($stmt->execute()) {
                 session_start();
                 $_SESSION["username_s"] = $username_s;
-               
+
                 $response = array();
                 $response['usernameNotAvailable'] = false;
                 header('Content-Type: application/json');
                 echo json_encode($response);
-                
             } else {
                 echo 'Error occurred while inserting into the database.';
             }
@@ -71,4 +72,3 @@ if ($stmt = $con->prepare('SELECT id FROM shop_details WHERE username_s = ?')) {
 
 $con->close();
 exit();
-?>
