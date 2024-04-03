@@ -34,11 +34,15 @@
 5. [Contributors](#contributors)
 
 ## Introduction
-
-## Overview
-
+FoodyPy is an online food delivery platform where customers can order from a variety of registered restaurants. Restaurant owners and delivery personnel can easily register on the website to expand their business and serve more customers.
 
 ## Key Features
+
+- Users can effortlessly register and log in to the system.
+- Customers can seamlessly explore menus, add items to their cart, make purchases, and receive timely updates on tracking details.
+- The website's dashboard allows shop owners to create menus, update order statuses, and modify menus as needed.
+- The driver's dashboard enables them to update order statuses, check order statuses, and perform related tasks.
+  
 
 ## Getting Started
 
