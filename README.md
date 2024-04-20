@@ -32,7 +32,7 @@
 
 ## Introduction
 - FoodyPy is an online food delivery platform where customers can order from a variety of registered restaurants. Restaurant owners and delivery personnel can easily register on the website to expand their business and serve more customers.
-- This youtube video will give you more insights about the project. [YouTube video](https://www.youtube.com/watch?v=jm4SAxpjhGo&t).
+- This youtube video will give you more insights about the project. [YouTube video](https://www.youtube.com/watch?v=siur9XA42f4).
 
 
 
