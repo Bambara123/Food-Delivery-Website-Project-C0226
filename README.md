@@ -66,5 +66,5 @@ Now you can navigate through any page of the website.
 ## Contributors
 
 - Mahesha Madhushanka ([@Madhushanka00](https://github.com/Madhushanka00)) 
-- Nipuni Sathya ([@nsathya](https://github.com/janesmith))
+- Nipuni Sathya ([@sath8](https://github.com/sath8))
 
